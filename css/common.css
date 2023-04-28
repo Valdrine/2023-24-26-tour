@@ -34,6 +34,9 @@ body {
     padding: 0 30px;
 }
 
+
+
+
 .header .logo {
     margin-right: auto;
 }
@@ -85,10 +88,17 @@ body {
     margin-left: 40px;
 }
 
+
 .header .user img {
     width: 100%;
     display: block;
 }
+
+.header .bars {
+    font-size: 36px;
+    display: none;
+}
+
 
 /* 7cd1e7 */
 
@@ -151,7 +161,91 @@ body {
 }
 
 
+
 .hero img {
     width: 26px;
     filter: brightness(100%) invert(1);
 }
+
+@media (max-width: 576px) { 
+    .header {
+        padding: 0 16px;
+    }
+    
+    .header .bars {
+        display: block;
+        z-index: 1;
+    }
+
+    .header .gnb {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        gap: 40px;
+        z-index: 1;
+        padding-top: 100px;
+        transition: all 0.3s;
+    }
+
+    .header .gnb.active {
+        left: 0;
+    }
+
+
+    .gnb li a {
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    .gnb li a:hover::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #7cd1e7;
+    }
+    
+    .gnb li.on a {
+        color: #7cd1e7;
+    }
+    
+    .gnb li.on a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: #7cd1e7;
+    }
+    
+    .hero {
+        background-size: cover;
+    }
+
+    .header .user {
+        display: none;
+    }
+
+
+    .hero .text_box h2 {
+        font-size: 26px;
+        font-weight: 700;
+    }
+    
+    .hero .text_box p {
+        font-size: 16px;
+    }
+ }
+
+
+
+
+
+
